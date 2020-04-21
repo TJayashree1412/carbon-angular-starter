@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HttpClientModule} from '@angular/common/http';
 
 // carbon-components-angular default imports
 import { UIShellModule } from 'carbon-components-angular';
@@ -26,7 +26,8 @@ import { HeaderComponent } from './header/header.component';
 		UIShellModule,
 		Notification20Module,
 		UserAvatar20Module,
-		AppSwitcher20Module
+		AppSwitcher20Module,
+		HttpClientModule
 	],
 	bootstrap: [AppComponent]
 })
