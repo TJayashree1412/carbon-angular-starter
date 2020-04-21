@@ -12,8 +12,8 @@
 	>
 	</ibm-table>
 	<ibm-pagination
-  [model]="model"
-  (selectPage)="selectPage($event)">
+  [model]="model"    
+  (selectPage)="selectPage($event)"> <!--model is where u send your data sliced inside selectPage method-->
 </ibm-pagination>
 </ibm-table-container>
 <ng-template #customTableItemTemplate let-data="data">
