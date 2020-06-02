@@ -1,3 +1,12 @@
+<div style="float: right;">			<button ibmButton skeleton="true" size="xl" class="bx--btn--secondary">
+	Add Contact
+	<svg class="bx--btn__icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+		<path d="M7 7H4v2h3v3h2V9h3V7H9V4H7v3zm1 9A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" fill-rule="evenodd" />
+	</svg>
+</button></div>
+<br/>
+<br/>
+
 <ibm-table-container>
 	<ibm-table-header>
 		<h4 ibmTableHeaderTitle>US HCAM Contacts</h4>
@@ -10,15 +19,23 @@
     [striped]="false"
     
 	>
+	<br/><p style="background-color: lightgray;">no records.</p>
+	
 	</ibm-table>
-	<ibm-pagination
+	<!-- <ibm-pagination
   [model]="model"    
-  (selectPage)="selectPage($event)"> <!--model is where u send your data sliced inside selectPage method-->
-</ibm-pagination>
+  (selectPage)="selectPage($event)"> 
+</ibm-pagination> -->
+<!--model is where u send your data sliced inside selectPage method-->
 </ibm-table-container>
+
+
+
+
 <ng-template #customTableItemTemplate let-data="data">
-   <a ibmLink [href]="data.link">{{data.name}}</a>
-</ng-template>
+   <a ibmLink routerLink="editIBMI" routerLinkActive="active"  >{{data.name}}</a>   <!--takes from current link repos/ -->
+</ng-template> 
+
 <!-- <ng-template #linkTemplate let-data="data">
 	<ul style="display: flex">
 	  <li>
@@ -35,4 +52,5 @@
           homepage: datum.homepageUrl
         },
         template: this.linkTemplate
-      }) -->
+	  }) -->
+	  <router-outlet></router-outlet>

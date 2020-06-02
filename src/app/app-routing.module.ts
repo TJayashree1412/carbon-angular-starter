@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EditIBMIComponent } from './repositories/edit-ibmi/edit-ibmi.component';
+// import { RepoTableComponent } from './repositories/repo-table/repo-table.component';
 
 const routes: Routes = [
 	{

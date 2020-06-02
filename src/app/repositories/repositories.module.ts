@@ -5,16 +5,17 @@ import { RepositoriesRoutingModule } from './repositories-routing.module';
 import { RepoPageComponent } from './repo-page/repo-page.component';
 import { GridModule, TableModule, DocumentationModule } from 'carbon-components-angular';
 import { RepoTableComponent } from './repo-table/repo-table.component';
-import { LinkModule, PaginationModule } from "carbon-components-angular";
+import { LinkModule, PaginationModule } from 'carbon-components-angular';
 import { ViewIbmiComponent } from './view-ibmi/view-ibmi.component';
+import { EditIBMIComponent } from './edit-ibmi/edit-ibmi.component';
 
 @NgModule({
-	declarations: [RepoPageComponent, RepoTableComponent, ViewIbmiComponent],
+	declarations: [RepoPageComponent, RepoTableComponent, ViewIbmiComponent, EditIBMIComponent],
 	imports: [
 		CommonModule,
 		RepositoriesRoutingModule,
 		GridModule,
-		 TableModule,
+		TableModule,
 		 LinkModule,
 		 PaginationModule,
 		 LinkModule,
