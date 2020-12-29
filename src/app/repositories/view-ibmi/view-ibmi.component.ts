@@ -10,6 +10,9 @@ import { TableModel, Table, TableItem, TableHeaderItem } from 'carbon-components
 	styleUrls: ['./view-ibmi.component.scss']
 })
 export class ViewIbmiComponent implements OnInit {
+	showLoader: boolean;
+  isActive: boolean;
+  overlay: boolean;
 	headers: string[];
 	contactsList: IBMIContact[] = [];
 	data = [];
@@ -26,6 +29,9 @@ export class ViewIbmiComponent implements OnInit {
 
 	ngOnInit() {
 		// this.getContactsList();
+		this.showLoader = true;
+		this.isActive = true;
+		this.overlay = true;
 		this.model.header = [
 			new TableHeaderItem({data: 'Name'}),
 			new TableHeaderItem({data: 'Email-Id'}),
@@ -37,7 +43,7 @@ export class ViewIbmiComponent implements OnInit {
 
 		this.administratorService.getIBMIContactsList().subscribe( (resp: any) => {
 			this.contactsList = resp.body;
-			this.data = [];
+			this.data = resp.body;
 		this.model.data = this.data;
 		// this.prepareData(this.contactsList);
 		this.model.totalDataLength = 0;
@@ -45,6 +51,9 @@ export class ViewIbmiComponent implements OnInit {
 		this.selectPage(1);
 			console.log('inside contactsList function: ', this.contactsList , '/n contactslist.length', this.contactsList.length, '\n this.model.totalDatalength', this.model.totalDataLength);
 		});
+		this.showLoader = false;
+		this.isActive = false;
+		this.overlay = false;
 
 	}
 

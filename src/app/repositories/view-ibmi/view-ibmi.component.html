@@ -6,28 +6,41 @@
 </button></div>
 <br/>
 <br/>
-
+<div *ngIf="showLoader" >
+	<ibm-loading [isActive]="isActive" size="sm"  [overlay]="overlay">
+		<!-- <div *ngIf="showLoader" class="sk-cube-grid">
+		<div class="sk-cube sk-cube1"></div>
+		<div class="sk-cube sk-cube2"></div>
+		<div class="sk-cube sk-cube3"></div>
+		<div class="sk-cube sk-cube4"></div>
+		<div class="sk-cube sk-cube5"></div>
+		<div class="sk-cube sk-cube6"></div>
+		<div class="sk-cube sk-cube7"></div>
+		<div class="sk-cube sk-cube8"></div>
+		<div class="sk-cube sk-cube9"></div>
+	  </div> -->
+	  <!-- <div class="lds-hourglass"></div> -->
+	</ibm-loading>
+</div>
 <ibm-table-container>
 	<ibm-table-header>
-		<h4 ibmTableHeaderTitle>US HCAM Contacts</h4>
-		<p ibmTableHeaderDescription>List of US HCAM contacts</p>
+		<h4 ibmTableHeaderTitle>TITLE</h4>
+		<p ibmTableHeaderDescription>DESCRIPTION</p>
 	</ibm-table-header>
 	<ibm-table
 	[skeleton]="skeleton"
 	[model]="skeleton ? skeletonModel : model"
 	[showSelectionColumn]="false"
     [striped]="false"
-    
-	>
-	<br/><p style="background-color: lightgray;">no records.</p>
-	
+	>	
 	</ibm-table>
-	<!-- <ibm-pagination
-  [model]="model"    
-  (selectPage)="selectPage($event)"> 
-</ibm-pagination> -->
-<!--model is where u send your data sliced inside selectPage method-->
+	<ibm-pagination
+  	[model]="model"    
+  	(selectPage)="selectPage($event)"> 
+	</ibm-pagination>
 </ibm-table-container>
+<!--model is where u send your data sliced inside selectPage method-->
+
 
 
 
